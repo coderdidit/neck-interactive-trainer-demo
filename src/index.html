@@ -3,21 +3,39 @@
 
 <head>
   <title>NASIT demo</title>
-  <script src="vendor/p5.min.js" type="text/javascript"></script>
-  <script src="vendor/p5.play.js" type="text/javascript"></script>
+  <script src="vendor/js/p5.min.js" type="text/javascript"></script>
+  <script src="vendor/js/p5.play.js" type="text/javascript"></script>
+  <script src="vendor/js/bootstrap.bundle.min.js" type="text/javascript"></script>
+
+  <link rel="stylesheet" type="text/css" href="vendor/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="vendor/css/bootstrap-grid.min.css">
+  <link rel="stylesheet" type="text/css" href="vendor/css/bootstrap-grid.rtl.min.css">
+  <link rel="stylesheet" type="text/css" href="vendor/css/bootstrap-utilities.min.css">
+  <link rel="stylesheet" type="text/css" href="vendor/css/bootstrap-reboot.min.css">
+
   <link rel="stylesheet" type="text/css" href="style.css">
+
+
   <meta charset="utf-8">
 </head>
 
 <body>
-  <h1>NASIT demo</h1>
-  <h2>#TouchLess and #GestureBase App</h2>
-  <h4>Neck and Sholders interactive trainer</h4>
-  <p>
-    Optimal for people spending lots of time in front of computer </p>
+  <div class="container">
 
-  <p>powered by Machine Learning</p>
-  <p>using tensorflow.js and p5.js</p>
+
+    <h1>NASIT demo</h1>
+    <h2>#TouchLess and #GestureBase App</h2>
+    <h4>Neck and Sholders interactive trainer</h4>
+    <p>
+      Optimal for people spending lots of time in front of computer </p>
+
+    <p>powered by Machine Learning</p>
+    <p>using tensorflow.js and p5.js</p>
+
+    <div class="d-flex align-items-center justify-content-center">
+      <div id="nasit-canvas"></div>
+    </div>
+  </div>
   <script src="sketch.js"></script>
 </body>
 
