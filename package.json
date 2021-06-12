@@ -8,7 +8,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "open": "concurrently 'http-server' 'open http://localhost:8080/src'"
+    "open": "concurrently 'watch-http-server' 'open http://localhost:8080/src'"
   },
   "author": "Marcin Kuzdowicz",
   "license": "ISC",

@@ -10,10 +10,10 @@ powered by Machine Learning
 
 using tensorflow.js and p5.js
 
-### running locally
+### running locally dev server
 
 ```shel
-npm install http-server -g
-http-server
-open http://localhost:8080/src
+npm install watch-http-server -g
+npm install
+npm run open
 ```
