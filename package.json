@@ -14,7 +14,7 @@
   "author": "Marcin Kuzdowicz",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.1"
+    "@tensorflow/tfjs": "^3.7.0"
   },
   "devDependencies": {
     "concurrently": "^6.2.0"
