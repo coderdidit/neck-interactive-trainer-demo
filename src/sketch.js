@@ -7,6 +7,10 @@ window.gameState = stop
 let x, y;
 let speed = 1.4
 
+function getHeight() {
+  return height - 25
+}
+
 function setup() {
   console.log('setup p5js sketch')
   var sketchCanvas = createCanvas(900, 900);
@@ -14,7 +18,7 @@ function setup() {
 
   // init ball
   x = width / 2;
-  y = height - 25;
+  y = getHeight();
 
   state = "stop"
 }
@@ -51,6 +55,6 @@ function draw() {
 
   // Reset to the bottom
   if (y < 0) {
-    y = height - 25;
+    y = getHeight();
   }
 }
