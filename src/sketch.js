@@ -1,7 +1,7 @@
 
 function setup() {
     console.log('setup p5js')
-    var sketchCanvas =createCanvas(500, 500);
+    var sketchCanvas =createCanvas(900, 900);
     sketchCanvas.parent("nasit-canvas");
   }
 
