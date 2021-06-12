@@ -1,0 +1,22 @@
+{
+  "name": "nasit-demo",
+  "version": "1.0.0",
+  "description": "neck and sholders interactive trainer",
+  "main": "src/index.js",
+  "engines": {
+    "node": ">=14.17.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/index.js",
+    "open": "concurrently 'node src/index.js' 'open http://localhost:3000'"
+  },
+  "author": "Marcin Kuzdowicz",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "concurrently": "^6.2.0"
+  }
+}
