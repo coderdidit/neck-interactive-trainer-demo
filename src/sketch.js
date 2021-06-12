@@ -1,9 +1,4 @@
 
-const move = "move"
-const stop = "stop"
-
-window.gameState = stop
-
 let x, y;
 let speed = 1.4
 
@@ -44,11 +39,11 @@ function draw() {
   // TODO measure if keyDwon and not KeyDwon happened within time frame
   // tha measure this as event
   if (keyDown("LEFT_ARROW") || keyDown("RIGHT_ARROW")) {
-    window.gameState = move
+    window.gameStateMove()
   } else {
-    window.gameState = stop
+    window.gameStateStop()
   }
-  if (window.gameState == move) {
+  if (window.gameStateIsInMove()) {
     // Moving up at a constant speed
     y -= speed;
   }
