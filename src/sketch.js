@@ -36,13 +36,6 @@ function draw() {
   // Jiggling randomly on the horizontal axis
   // x = x + random(-1, 1);
 
-  // TODO measure if keyDwon and not KeyDwon happened within time frame
-  // tha measure this as event
-  if (keyDown("LEFT_ARROW") || keyDown("RIGHT_ARROW")) {
-    window.gameStateMove()
-  } else {
-    window.gameStateStop()
-  }
   if (window.gameStateIsInMove()) {
     // Moving up at a constant speed
     y -= speed;
