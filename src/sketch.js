@@ -1,6 +1,6 @@
 
 let x, y;
-let speed = 2
+let speed = 1.2
 
 function getHeight() {
   return height - 25
@@ -9,7 +9,7 @@ function getHeight() {
 // needs to be defined in window for bundler
 window.setup = () => {
   console.log('setup p5js sketch')
-  var sketchCanvas = createCanvas(900, 400);
+  var sketchCanvas = createCanvas(window.innerWidth, window.innerHeight-90);
   sketchCanvas.parent("main-canvas");
 
   // init ball
@@ -26,13 +26,13 @@ window.draw = () => {
   background(102, 178, 255);
 
   // ladder
-  fill(127, 0, 255);
-  rect((width / 2) - 25, 0, 60, 900);
+  fill(0,153,0);
+  rect((width / 2) - 25, 0, 60, window.innerHeight-90);
 
   if (window.gameState) {
     // ball
     stroke(50);
-    fill(0, 153, 0);
+    fill(228,26,74);
     ellipse(x, y, 35, 35);
 
     // TODO investigate jiggling
