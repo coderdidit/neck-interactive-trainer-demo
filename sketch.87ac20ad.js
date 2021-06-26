@@ -163,7 +163,8 @@ function getHeight() {
 
 function drawLadder() {
   fill(0, 153, 0);
-  rect(width / 2 - 25, 0, 80, window.innerHeight - 90);
+  var rectWidth = 80;
+  rect(window.innerWidth / 2 - rectWidth / 2, 0, 80, window.innerHeight - 90);
 }
 
 function drawBackground() {
@@ -178,7 +179,7 @@ window.setup = function () {
   var sketchCanvas = createCanvas(window.innerWidth, window.innerHeight - 90);
   sketchCanvas.parent("main-canvas"); // init ball
 
-  var x = width / 2 + 14;
+  var x = window.innerWidth / 2;
   var y = getHeight() - 9;
   ball = new Ball(x, y);
 }; // needs to be defined in window for bundler
@@ -197,4 +198,4 @@ window.draw = function () {
   }
 };
 },{}]},{},["nyCU"], null)
-//# sourceMappingURL=https://mkuzdowicz.com/neck-interactive-trainer-demo/sketch.4249a66b.js.map
+//# sourceMappingURL=https://mkuzdowicz.com/neck-interactive-trainer-demo/sketch.87ac20ad.js.map
