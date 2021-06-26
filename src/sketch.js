@@ -29,7 +29,8 @@ function getHeight() {
 
 function drawLadder() {
   fill(0, 153, 0);
-  rect((width / 2) - 25, 0, 80, window.innerHeight - 90);
+  const rectWidth = 80
+  rect((window.innerWidth / 2) - rectWidth / 2, 0, 80, window.innerHeight - 90);
 }
 
 function drawBackground() {
@@ -46,7 +47,7 @@ window.setup = () => {
   sketchCanvas.parent("main-canvas");
 
   // init ball
-  let x = (width / 2) + 14;
+  let x = (window.innerWidth / 2);
   let y = getHeight() - 9;
   ball = new Ball(x, y)
 }
