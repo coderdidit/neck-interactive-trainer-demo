@@ -15,6 +15,20 @@ because it's not exciting enough for me
 
 That is why i want to gemify it
 
+# Technologies Used
+- Tensorflow.js
+- p5.js
+- Parcel Bundler
+
+# Current Features
+ability to move the ball up using face detection through webcam by
+- moving your head to left or right 
+- stretching your neck to left or right
+
+
+# Future Features
+More gamification
+
 ### running locally
 
 ```shel
