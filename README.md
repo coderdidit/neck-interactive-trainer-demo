@@ -8,7 +8,7 @@ powered by Machine Learning
 
 using tensorflow.js and p5.js
 
-## The Why
+# The Why
 
 As a idnividual, I struggle to do excersize
 because it's not exciting enough for me
