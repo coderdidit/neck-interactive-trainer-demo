@@ -112,21 +112,27 @@ const renderPrediction = async () => {
                 getAnglesBetween(nose, leftEye, rightEye)
 
             const activationAngle = 25
-
+            let landmarPointSize
             if (noseToLeftEyeAngle < activationAngle
                 || noseToRightEyeAngle < activationAngle) {
-                ctx.fillStyle = "yellow";
                 window.gameStateMove()
+                ctx.fillStyle = "yellow";
+                landmarPointSize = 5
             } else {
                 window.gameStateStop()
                 ctx.fillStyle = "blue";
+                landmarPointSize = 3
             }
 
             // draw face landmarks
-            for (let j = 0; j < landmarks.length; j++) {
+            // iterate up to 3 (right eye, left eye, nose)
+            for (let j = 0; j < 3; j++) {
                 const x = landmarks[j][0];
                 const y = landmarks[j][1];
-                ctx.fillRect(x, y, 5, 5);
+                ctx.beginPath();
+                ctx.arc(x, y, landmarPointSize, 0,
+                    2 * Math.PI, false);
+                ctx.fill()
             }
         }
     }
