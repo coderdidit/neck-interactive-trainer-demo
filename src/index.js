@@ -135,7 +135,9 @@ const renderPrediction = async () => {
 
 const setupPage = async () => {
     await tf.setBackend('wasm')
+    console.log('tfjs backend loaded')
     await setupCamera()
+    console.log('setupCamera finished')
     video.play()
 
     const videoWidth = video.videoWidth
