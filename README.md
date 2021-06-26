@@ -1,4 +1,4 @@
-# neck interactive trainer DEMO
+# Neck Interactive Trainer (NIT) DEMO
 
 Optimal for people spending lots of time in front of the computer
 
@@ -8,7 +8,7 @@ powered by Machine Learning
 
 using tensorflow.js and p5.js
 
-## the why
+## The Why
 
 As a idnividual, I struggle to do excersize
 because it's not exciting enough for me
@@ -29,7 +29,7 @@ ability to move the ball up using face detection through webcam by
 # Future Features
 More gamification
 
-### running locally
+# Running locally
 
 ```shel
 npm install
