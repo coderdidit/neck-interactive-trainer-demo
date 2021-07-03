@@ -13,10 +13,9 @@ using tensorflow.js and p5.js
 
 # The Why
 
-As a idnividual, I struggle to do excersize
-because it's not exciting enough for me
+As an individual, I struggle to do exercise because it's not exciting enough for me
 
-That is why i want to gemify it
+That is why I want to gamify it
 
 # Technologies Used
 - Tensorflow.js
