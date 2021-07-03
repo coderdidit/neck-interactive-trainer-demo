@@ -2,7 +2,7 @@
 
 Optimal for people spending lots of time in front of the computer
 
-&#TouchLess and &#GestureBase app
+#TouchLess and #GestureBase app
 
 powered by Machine Learning
 
