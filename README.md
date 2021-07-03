@@ -8,7 +8,7 @@ powered by Machine Learning
 
 using tensorflow.js and p5.js
 
-![nit_medium](https://user-images.githubusercontent.com/10913420/124361986-3cb27e80-dc2a-11eb-8133-292c23db0fc4.gif)
+![xl](https://user-images.githubusercontent.com/10913420/124362209-82237b80-dc2b-11eb-84b7-5dbcd103cd13.gif)
 
 
 # The Why
