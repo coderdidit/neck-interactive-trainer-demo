@@ -2,13 +2,13 @@
 
 Optimal for people spending lots of time in front of the computer
 
-#TouchLess and #GestureBase app
+&#TouchLess and &#GestureBase app
 
 powered by Machine Learning
 
 using tensorflow.js and p5.js
 
-![nit](https://user-images.githubusercontent.com/10913420/123551163-8b62a300-d768-11eb-96c6-8d9b84584916.gif)
+![nit_medium](https://user-images.githubusercontent.com/10913420/124361986-3cb27e80-dc2a-11eb-8133-292c23db0fc4.gif)
 
 
 # The Why
