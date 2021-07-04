@@ -24,3 +24,7 @@ header {
   width: 25%;
   height: auto;
 }
+
+#feedback {
+  float: left;
+}
