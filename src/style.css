@@ -1,5 +1,5 @@
 .webcam-stream {
-    transform: scaleX(-1);
+  transform: scaleX(-1);
 }
 
 #video-output {
@@ -25,6 +25,10 @@ header {
   height: auto;
 }
 
-#fright {
+#head-btns {
   float: right;
+}
+
+#head-text {
+  margin-left: 1%;
 }
