@@ -9,7 +9,7 @@
   "scripts": {
     "test": "jest",
     "start": "parcel src/index.html",
-    "build": "rm -rf build && parcel build src/index.html --public-url https://mkuzdowicz.com/neck-interactive-trainer-demo --no-cache --no-minify -d build"
+    "build": "rm -rf build && parcel build src/index.html --public-url https://coderdidit.com/neck-interactive-trainer-demo --no-cache --no-minify -d build"
   },
   "author": "Marcin Kuzdowicz",
   "license": "ISC",
