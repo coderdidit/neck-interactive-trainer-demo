@@ -2371,4 +2371,4 @@ window.draw = function () {
   }
 };
 },{"party-js":"rnaI"}]},{},["nyCU"], null)
-//# sourceMappingURL=https://mkuzdowicz.com/neck-interactive-trainer-demo/sketch.9cff7fc7.js.map
+//# sourceMappingURL=https://coderdidit.com/neck-interactive-trainer-demo/sketch.9cff7fc7.js.map

@@ -103015,4 +103015,4 @@ var setupPage = /*#__PURE__*/function () {
 
 setupPage();
 },{"regenerator-runtime/runtime":"QVnC","@tensorflow-models/blazeface":"RtvR","@tensorflow/tfjs-core":"kSBl","@tensorflow/tfjs-backend-wasm":"FACr","@tensorflow/tfjs-backend-webgl":"gNVZ","@tensorflow/tfjs-backend-cpu":"sqr6","./angles":"JdX3"}]},{},["Focm"], null)
-//# sourceMappingURL=https://mkuzdowicz.com/neck-interactive-trainer-demo/src.31485282.js.map
+//# sourceMappingURL=https://coderdidit.com/neck-interactive-trainer-demo/src.31485282.js.map

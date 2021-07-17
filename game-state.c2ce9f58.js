@@ -140,4 +140,4 @@ window.gameStateIsInMove = function () {
 
 window.gameStateInit();
 },{}]},{},["lPRR"], null)
-//# sourceMappingURL=https://mkuzdowicz.com/neck-interactive-trainer-demo/game-state.c2ce9f58.js.map
+//# sourceMappingURL=https://coderdidit.com/neck-interactive-trainer-demo/game-state.c2ce9f58.js.map
