@@ -32,3 +32,13 @@ header {
 #head-text {
   margin-left: 1%;
 }
+
+#find-me-on-btns {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+
+#find-me-on-yt {
+  background-color: #ed302f;
+}

@@ -9,6 +9,9 @@
   <!-- bootstrap -->
   <link rel="stylesheet" type="text/css" href="vendor/css/bootstrap.min.css">
 
+  <!-- fonts -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet" />
+
   <!-- custom css -->
   <link rel="stylesheet" type="text/css" href="style.css">
 
@@ -29,9 +32,11 @@
 <body>
   <header>
     <div id="head-btns" class="btn-group-vertical" role="group">
-      <a class="btn btn-info" target="_blank" href="https://forms.gle/RPh7GPKhrTFHUn2y7">feedback</a>
-      <a class="btn btn-danger" target="_blank" href="https://coderdidit.ck.page/4acedad139">more games like
-        that!</a>
+      <a class="btn btn-info" target="_blank" href="https://forms.gle/RPh7GPKhrTFHUn2y7">
+        feedback</a>
+      <a class="btn btn-danger" target="_blank" href="https://coderdidit.ck.page/4acedad139">
+        sign up for more
+      </a>
     </div>
     <div id="head-text">
       <h3>Neck Interactive Trainer (NIT) Demo</h3>
@@ -40,6 +45,14 @@
   </header>
   <div id="main-canvas"></div>
   <video id="video" autoplay playsinline muted style="display: none;"></video>
+  <!-- Youtube -->
+  <div id="find-me-on-btns">
+    <a target="_blank" id="find-me-on-yt" class="btn btn-primary" href="https://www.youtube.com/watch?v=oGzIsQnsTTA"
+      role="button">
+      How to Play
+      <i class="fab fa-youtube"></i>
+    </a>
+  </div>
   <canvas id="video-output" class="bottom-right"></canvas>
   <script src="game-state.js"></script>
   <script src="sketch.js"></script>
