@@ -56,29 +56,21 @@ changeCameraBtn.addEventListener('click', async (event) => {
     videoConstraints.deviceId = { exact: selectCamera.value };
   }
   const constraints = {
+    width: { min: 1024, ideal: 1280, max: 1920 },
+    height: { min: 776, ideal: 720, max: 1080 },
     video: videoConstraints,
     audio: false
   };
 
   console.log('changing camera', constraints)
 
-  navigator.mediaDevices
-    .getUserMedia(constraints)
-    .then(stream => {
-      currentStream = stream;
-      video.srcObject = stream;
-      return new Promise((resolve) => {
-        video.onloadedmetadata = () => {
-          resolve(video)
-        }
-      })
-    })
-    .then(() => {
-      startGame()
-    })
-    .catch(error => {
-      console.error(error);
-    });
+  currentStream = await navigator.mediaDevices.getUserMedia(constraints)
+  video.srcObject = currentStream
+  video.onloadedmetadata = () => {
+    video.play()
+    console.log('video play')
+    startGame()
+  }
 });
 
 
