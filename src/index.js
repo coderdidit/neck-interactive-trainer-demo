@@ -51,7 +51,7 @@ changeCameraBtn.addEventListener('click', async (event) => {
   }
   const videoConstraints = {};
   if (selectCamera.value === '') {
-    videoConstraints.facingMode = 'environment';
+    videoConstraints.facingMode = 'user';
   } else {
     videoConstraints.deviceId = { exact: selectCamera.value };
   }
