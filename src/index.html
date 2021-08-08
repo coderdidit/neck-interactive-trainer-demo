@@ -16,7 +16,8 @@
   <link rel="stylesheet" type="text/css" href="style.css">
 
   <!-- jquery -->
-  <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+    integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -40,6 +41,10 @@
       <a class="btn btn-danger btn-sm" target="_blank" href="https://coderdidit.ck.page/4acedad139">
         sign up for more
       </a>
+      <!-- camera setup -->
+      <button id="switch-camera-btn" type="button" class="btn btn-info btn-sm bottom-right" data-bs-toggle="modal"
+        data-bs-target="#exampleModal">choose camera</button>
+
     </div>
     <div id="head-text">
       <h3>Neck Interactive Trainer Demo</h3>
@@ -56,8 +61,6 @@
       <i class="fab fa-youtube"></i>
     </a>
   </div>
-  <!-- camera setup -->
-  <button id="switch-camera-btn" type="button" class="btn btn-info btn-sm bottom-right" data-bs-toggle="modal" data-bs-target="#exampleModal">switch camera</button>
   <!-- Modal -->
   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -75,7 +78,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button id="change-camera-btn" type="button" class="btn btn-primary">Save changes</button>
+          <button id="change-camera-btn" type="button" class="btn btn-primary" data-bs-dismiss="modal">Save changes</button>
         </div>
       </div>
     </div>
