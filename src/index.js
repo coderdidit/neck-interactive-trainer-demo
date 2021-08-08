@@ -18,65 +18,74 @@ const canvas = document.getElementById('video-output')
 let model, ctx
 let currentStream
 
-const selectCamera = $("#cameras-options")
+const selectCamera = document.getElementById('cameras-options'); 
+const changeCameraBtn = document.getElementById('change-camera-btn');
 
-const changeCameraBtn = $("#change-camera-btn")
-
-const getCameras = async () => {
-    const devices = await navigator.mediaDevices.enumerateDevices()
-    const cameras = devices.filter((device) => { return device.kind === 'videoinput' })
-
-    cameras.forEach((el) => {
-        console.log("camOpts", el)
-        const opt = document.createElement('option');
-        opt.value = el.deviceId;
-        opt.innerHTML = el.label;
-        selectCamera.append(opt);
-    })
-}
+function gotDevices(mediaDevices) {
+    selectCamera.innerHTML = '';
+    selectCamera.appendChild(document.createElement('option'));
+    let count = 1;
+    mediaDevices.forEach(mediaDevice => {
+      if (mediaDevice.kind === 'videoinput') {
+        console.log('mediaDevice', mediaDevice)
+        const option = document.createElement('option');
+        option.value = mediaDevice.deviceId;
+        const label = mediaDevice.label || `Camera ${count++}`;
+        const textNode = document.createTextNode(label);
+        option.appendChild(textNode);
+        selectCamera.appendChild(option);
+      }
+    });
+  }
 
 
 function stopMediaTracks(stream) {
+    console.log('stopMediaTracks')
     stream.getTracks().forEach(track => {
         track.stop();
     });
 }
 
-changeCameraBtn.click(async (event) => {
+changeCameraBtn.addEventListener('click', event => {
+    console.log('changeCameraBtn clicked', 'currentStream', currentStream)
     if (typeof currentStream !== 'undefined') {
-        stopMediaTracks(currentStream);
+      stopMediaTracks(currentStream);
     }
     const videoConstraints = {};
-    if (selectCamera.val() === '') {
-        videoConstraints.facingMode = 'environment';
+    if (selectCamera.value === '') {
+      videoConstraints.facingMode = 'environment';
     } else {
-        videoConstraints.deviceId = { exact: selectCamera.val() };
+      videoConstraints.deviceId = { exact: selectCamera.value };
     }
     const constraints = {
-        video: videoConstraints,
-        audio: false
+      video: videoConstraints,
+      audio: false
     };
+    
+    console.log('changing camera', constraints)
 
-    console.log('changing constraints', constraints)
-
-    currentStream = await navigator.mediaDevices.getUserMedia(constraints)
-    video.srcObject = currentStream
-
-    const p = new Promise((resolve) => {
-        video.onloadedmetadata = () => {
-            resolve(video)
-        }
-    })
-    await p
-})
+    navigator.mediaDevices
+      .getUserMedia(constraints)
+      .then(stream => {
+        currentStream = stream;
+        video.srcObject = stream;
+        return navigator.mediaDevices.enumerateDevices();
+      })
+      .then(gotDevices)
+      .catch(error => {
+        console.error(error);
+      });
+  });
+  
 
 const setupCamera = async () => {
+    console.log('setting up camera')
     currentStream = await navigator.mediaDevices.getUserMedia({
         'audio': false,
-        'video': { facingMode: 'user' },
+        'video': { facingMode: 'user' }
     })
     video.srcObject = currentStream
-
+    console.log('currentStream', currentStream)
     return new Promise((resolve) => {
         video.onloadedmetadata = () => {
             resolve(video)
@@ -195,9 +204,9 @@ const renderPrediction = async () => {
 const setupPage = async () => {
     await tf.setBackend('wasm')
     console.log('tfjs backend loaded')
-    await getCameras()
-    await setupCamera()
-    console.log('setupCamera finished')
+    navigator.mediaDevices.enumerateDevices().then(gotDevices);
+    const setupCameraRes = await setupCamera()
+    console.log('setupCamera finished', 'setupCameraRes', setupCameraRes)
     video.play()
 
     const videoWidth = video.videoWidth
