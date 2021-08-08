@@ -16,13 +16,16 @@ const video = document.getElementById('video')
 const canvas = document.getElementById('video-output')
 
 let model, ctx
+let currentStream
 
 const selectCamera = $("#cameras-options")
 
+const changeCameraBtn = $("#change-camera-btn")
+
 const getCameras = async () => {
     const devices = await navigator.mediaDevices.enumerateDevices()
-    const cameras = devices.filter((device) => { return device.kind === 'videoinput'})
-    
+    const cameras = devices.filter((device) => { return device.kind === 'videoinput' })
+
     cameras.forEach((el) => {
         console.log("camOpts", el)
         const opt = document.createElement('option');
@@ -32,12 +35,47 @@ const getCameras = async () => {
     })
 }
 
+
+function stopMediaTracks(stream) {
+    stream.getTracks().forEach(track => {
+        track.stop();
+    });
+}
+
+changeCameraBtn.click(async (event) => {
+    if (typeof currentStream !== 'undefined') {
+        stopMediaTracks(currentStream);
+    }
+    const videoConstraints = {};
+    if (selectCamera.val() === '') {
+        videoConstraints.facingMode = 'environment';
+    } else {
+        videoConstraints.deviceId = { exact: selectCamera.val() };
+    }
+    const constraints = {
+        video: videoConstraints,
+        audio: false
+    };
+
+    console.log('changing constraints', constraints)
+
+    currentStream = await navigator.mediaDevices.getUserMedia(constraints)
+    video.srcObject = currentStream
+
+    const p = new Promise((resolve) => {
+        video.onloadedmetadata = () => {
+            resolve(video)
+        }
+    })
+    await p
+})
+
 const setupCamera = async () => {
-    const stream = await navigator.mediaDevices.getUserMedia({
+    currentStream = await navigator.mediaDevices.getUserMedia({
         'audio': false,
         'video': { facingMode: 'user' },
     })
-    video.srcObject = stream
+    video.srcObject = currentStream
 
     return new Promise((resolve) => {
         video.onloadedmetadata = () => {
