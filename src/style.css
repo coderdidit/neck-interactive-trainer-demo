@@ -42,3 +42,10 @@ header {
 #find-me-on-yt {
   background-color: #ed302f;
 }
+
+#switch-camera-btn {
+  bottom: 17%;
+  color: white;
+  background-color: gray;
+  border: none;
+}

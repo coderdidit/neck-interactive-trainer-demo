@@ -15,9 +15,12 @@
   <!-- custom css -->
   <link rel="stylesheet" type="text/css" href="style.css">
 
+  <!-- jquery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Neck Interactive Trainer (NIT) Demo</title>
+  <title>Neck Interactive Trainer Demo</title>
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-CXZ5P6LTEN"></script>
   <script>
@@ -32,14 +35,14 @@
 <body>
   <header>
     <div id="head-btns" class="btn-group-vertical" role="group">
-      <a class="btn btn-info" target="_blank" href="https://forms.gle/RPh7GPKhrTFHUn2y7">
+      <a class="btn btn-info btn-sm" target="_blank" href="https://forms.gle/RPh7GPKhrTFHUn2y7">
         feedback</a>
-      <a class="btn btn-danger" target="_blank" href="https://coderdidit.ck.page/4acedad139">
+      <a class="btn btn-danger btn-sm" target="_blank" href="https://coderdidit.ck.page/4acedad139">
         sign up for more
       </a>
     </div>
     <div id="head-text">
-      <h3>Neck Interactive Trainer (NIT) Demo</h3>
+      <h3>Neck Interactive Trainer Demo</h3>
       <p>start to do some streches &nbsp💪 &nbsp and move the ball &nbsp🏈 &nbsp up 🎉</p>
     </div>
   </header>
@@ -53,7 +56,35 @@
       <i class="fab fa-youtube"></i>
     </a>
   </div>
+  <!-- camera setup -->
+  <button id="switch-camera-btn" type="button" class="btn btn-info btn-sm bottom-right" data-bs-toggle="modal" data-bs-target="#exampleModal">switch camera</button>
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">
+            Choose which camera you want to use</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Please allow the camera access
+          <select id="cameras-options">
+
+          </select>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--  -->
   <canvas id="video-output" class="bottom-right"></canvas>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
   <script src="game-state.js"></script>
   <script src="sketch.js"></script>
   <script src="index.js"></script>

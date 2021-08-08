@@ -17,6 +17,21 @@ const canvas = document.getElementById('video-output')
 
 let model, ctx
 
+const selectCamera = $("#cameras-options")
+
+const getCameras = async () => {
+    const devices = await navigator.mediaDevices.enumerateDevices()
+    const cameras = devices.filter((device) => { return device.kind === 'videoinput'})
+    
+    cameras.forEach((el) => {
+        console.log("camOpts", el)
+        const opt = document.createElement('option');
+        opt.value = el.deviceId;
+        opt.innerHTML = el.label;
+        selectCamera.append(opt);
+    })
+}
+
 const setupCamera = async () => {
     const stream = await navigator.mediaDevices.getUserMedia({
         'audio': false,
@@ -142,6 +157,7 @@ const renderPrediction = async () => {
 const setupPage = async () => {
     await tf.setBackend('wasm')
     console.log('tfjs backend loaded')
+    await getCameras()
     await setupCamera()
     console.log('setupCamera finished')
     video.play()
