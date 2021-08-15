@@ -7,6 +7,18 @@
   border: 5px solid rgb(114, 107, 107);
 }
 
+#welcom-bg {
+  background-color: #66B2FF;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+#welcom-bg-container {
+  margin-top: 50%;
+  color: whitesmoke;
+}
+
 #main-canvas {
   width: 100%;
   height: 100%;

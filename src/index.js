@@ -154,6 +154,11 @@ const setupPage = async () => {
     canvas.width = videoWidth
     canvas.height = videoHeight
 
+    const videoOutput = document.getElementById('video-output')
+    const mainCanvas = document.getElementById('main-canvas')
+    videoOutput.style.display = 'block'
+    mainCanvas.style.display = 'block'
+
     ctx = canvas.getContext('2d')
     ctx.fillStyle = "rgba(255, 0, 0, 0.5)"
 
