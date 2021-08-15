@@ -139,7 +139,7 @@ const renderPrediction = async () => {
     requestAnimationFrame(renderPrediction)
 }
 
-const setupPage = async () => {
+const setupGame = async () => {
     await tf.setBackend('wasm')
     console.log('tfjs backend loaded')
     await setupCamera()
@@ -154,6 +154,14 @@ const setupPage = async () => {
     canvas.width = videoWidth
     canvas.height = videoHeight
 
+    const welcomBg = document.getElementById('welcom-bg')
+    welcomBg.style.display = 'none'
+
+    const videoOutput = document.getElementById('video-output')
+    const mainCanvas = document.getElementById('main-canvas')
+    videoOutput.style.display = 'block'
+    mainCanvas.style.display = 'block'
+
     ctx = canvas.getContext('2d')
     ctx.fillStyle = "rgba(255, 0, 0, 0.5)"
 
@@ -162,4 +170,5 @@ const setupPage = async () => {
     renderPrediction()
 }
 
-setupPage()
+const playBtn = document.getElementById('play-btn')
+playBtn.addEventListener('click', () => setupGame())

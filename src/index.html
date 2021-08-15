@@ -43,7 +43,15 @@
       <p>start to do some streches &nbsp💪 &nbsp and move the ball &nbsp🏈 &nbsp up 🎉</p>
     </div>
   </header>
-  <div id="main-canvas"></div>
+  <div id="welcom-bg">
+    <div id="welcom-bg-container" class="text-center">
+      <button id="play-btn" type="button" class="btn btn-danger align-self-center">play 🎮</button>
+      <br>
+      <br>
+      <p>you will need to allow acces to your webcam/camera 📷</p>
+    </div>
+  </div>
+  <div style="display: none;" id="main-canvas"></div>
   <video id="video" autoplay playsinline muted style="display: none;"></video>
   <!-- Youtube -->
   <div id="find-me-on-btns">
@@ -53,7 +61,7 @@
       <i class="fab fa-youtube"></i>
     </a>
   </div>
-  <canvas id="video-output" class="bottom-right"></canvas>
+  <canvas style="display: none;" id="video-output" class="bottom-right"></canvas>
   <script src="game-state.js"></script>
   <script src="sketch.js"></script>
   <script src="index.js"></script>
