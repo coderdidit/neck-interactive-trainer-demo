@@ -24,33 +24,12 @@
   height: 100%;
 }
 
-header {
-  height: 90px;
-  padding: 5px;
-  position: fixed;
-  z-index: 1;
-  background-color: white;
-}
-
-
-header .btn {
-  width: 5vw;
-}
-
 .bottom-right {
   position: absolute;
   bottom: 0px;
   right: 0px;
   width: 25%;
   height: auto;
-}
-
-#head-btns {
-  float: right;
-}
-
-#head-text {
-  margin-left: 1%;
 }
 
 #find-me-on-btns {
