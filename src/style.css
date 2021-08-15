@@ -15,7 +15,7 @@
 }
 
 #welcom-bg-container {
-  margin-top: 40vh;
+  margin-top: 35vh;
   color: whitesmoke;
 }
 
@@ -32,7 +32,7 @@
   height: auto;
 }
 
-#find-me-on-btns {
+#how-to-play {
   position: fixed;
   bottom: 0;
   left: 0;
