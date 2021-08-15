@@ -12,7 +12,7 @@ const wasmPath = `https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-backend-wasm@${t
 console.log('registering wasm', wasmPath)
 tfjsWasm.setWasmPaths(wasmPath);
 
-const video = document.getElementById('video')
+let video = document.getElementById('video')
 const canvas = document.getElementById('video-output')
 
 let model, ctx
@@ -44,6 +44,10 @@ function stopMediaTracks(stream) {
   });
 }
 
+video.onloadeddata = (e) => {
+  console.log('onloadeddata', e)
+}
+
 changeCameraBtn.addEventListener('click', async (event) => {
   console.log('changeCameraBtn clicked', 'currentStream', currentStream)
   if (typeof currentStream !== 'undefined') {
@@ -65,12 +69,24 @@ changeCameraBtn.addEventListener('click', async (event) => {
   console.log('changing camera', constraints)
 
   currentStream = await navigator.mediaDevices.getUserMedia(constraints)
+
   video.srcObject = currentStream
-  video.onloadedmetadata = () => {
-    video.play()
-    console.log('video play')
-    startGame()
-  }
+  video = await new Promise((resolve, reject) => {
+    video.onloadedmetadata = () => resolve(video);
+  });
+  video.play();
+
+
+  // video.srcObject = currentStream
+  // video.onloadedmetadata = () => {
+  //   video.play()
+  //   console.log('video play')
+  // }
+
+  // video.onloadeddata = () => {
+  //   console.log('startGame')
+  //   startGame()
+  // }
 });
 
 
