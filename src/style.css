@@ -9,8 +9,8 @@
 
 #welcom-bg {
   background-color: #66B2FF;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   position: absolute;
 }
 
@@ -27,6 +27,14 @@
 header {
   height: 90px;
   padding: 5px;
+  position: fixed;
+  z-index: 1;
+  background-color: white;
+}
+
+
+header .btn {
+  width: 5vw;
 }
 
 .bottom-right {
